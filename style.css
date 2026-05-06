@@ -1,0 +1,402 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root{
+    /* Light Mode Colors */
+    --primary-color: #000000;
+    --secondary-color: #848589;
+    --tertiary: #0066FF;
+    --neutral: #F7F7F8;
+    --bg-color: #FFFFFF;
+    --text-color: #000000;
+    --border-color: #848589;
+    --hover-bg: #E2E2E2;
+}
+
+/* Dark Mode Colors */
+body.dark {
+    --primary-color: #FFFFFF;
+    --secondary-color: #B0B0B0;
+    --tertiary: #66B2FF;
+    --neutral: #2A2A2A;
+    --bg-color: #1E1E1E;
+    --text-color: #FFFFFF;
+    --border-color: #444444;
+    --hover-bg: #404040;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* gap: 20px; */
+}
+
+.left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--neutral);
+    border-right: 2px solid var(--border-color);
+    padding: 15px 0;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.left .profile{
+    display : flex;
+    gap: 20px;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.left .profile img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.left .profile .details h3{
+    font-size: 1rem;
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.left .profile .details h2{
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.left button{
+    width: 90%;
+    padding: 10px 0;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--neutral);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.left button:hover{
+    background-color: gray;
+    scale: 1.05;
+    transition: all 0.3s ease;
+}
+
+.left .list-notes{
+    padding: 10px;
+    display : flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+.left .list-notes ul{
+    list-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    /* width: 100%; */
+}
+
+.list-notes h2{
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.left .list-notes ul li{
+    /* width: 100%; */
+    padding: 10px;
+    list-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    border:none;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.list-notes ul li:hover{
+    background-color: var(--hover-bg);
+    border-radius: 5px;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+
+.note-title{
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.right{
+    flex: 4;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px 125px; */
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
+}
+
+.right .topBar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.right .topBar .name{
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.right .topBar .actions{
+    display:flex;
+    gap: 16px;
+}
+
+.right .topBar .actions svg{
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.right .topBar .actions svg:hover{
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+    scale: 1.2;
+}
+
+.right .topBar .actions #moon{
+    color: gray;
+}
+
+.right .topBar .actions #sun{
+    /* color:#0066FF; */
+    fill: black
+}
+
+/* Dark mode theme toggle icon styles */
+body.dark .right .topBar .actions #sun {
+    fill: #FFD700;
+}
+
+body.dark .right .topBar .actions #moon {
+    color: #4A90E2;
+}
+
+.right .content{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.right .content input{
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    background-color: var(--neutral);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.right .content textarea{
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    resize: none;
+    height: 300px;
+    background-color: var(--neutral);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.noteContainer {
+    padding: 20px;
+    min-height: 400px;
+    width: 100%;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.noteContainer.hidden {
+    display: none;
+}
+
+.readonly-note input,
+.readonly-note textarea {
+    background-color: var(--neutral);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    resize: none;
+    transition: all 0.3s ease;
+}
+
+.readonly-note input {
+    margin-bottom: 16px;
+}
+
+.readonly-note textarea {
+    min-height: 260px;
+}
+
+.edit-btn{
+    background-color: var(--primary-color);
+    color: var(--neutral);
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    padding: 10px;
+    font-size: 1rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.edit-btn:hover{
+    background-color: gray;
+    transition: all 0.3s ease;
+    scale: 1.05;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+.delete-btn{
+    background-color: #E2E2E2;
+    color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    padding: 10px;
+    font-size: 1rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.delete-btn:hover{
+    background-color: #C1C1C1;
+    transition: all 0.3s ease;
+    scale: 1.05;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.cancel-btn {
+    background-color: #848589;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.cancel-btn:hover {
+    background-color: #6d6d7f;
+    transition: all 0.3s ease;
+    scale: 1.03;
+}
+
+.right .content input, .right .content textarea{
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.right .content input:focus, .right .content textarea:focus{
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+.right .content .btns button {
+    width: 100px;
+    padding: 10px;
+    border: none;
+}
+
+.right .content .btns .save-btn{
+    background-color: var(--primary-color);
+    color: var(--neutral);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.right .content .btns .save-btn:hover{
+    /* background-color: gray; */
+    transition: all 0.3s ease;
+    scale: 1.05;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+.right .content .btns .delete-btn{
+    background-color: #E2E2E2;
+    color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.right .content .btns .delete-btn:hover{
+    background-color: #C1C1C1;
+    transition: all 0.3s ease;
+    scale: 1.05;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}

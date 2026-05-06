@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes Take</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <section class="profile">
+            <img src="https://sp.yimg.com/ib/th/id/OIP._7DdY6Qv60veNrMslTsmvQHaE8?pid=Api&w=148&h=148&c=7&dpr=2&rs=1" alt="">
+            <div class="details">
+                <h2>John Doe</h2>
+                <h3>Personal Workspace</h3>
+            </div>
+        </section>
+        <button class="addBtn">Add Note</button>
+        <section class="list-notes">
+            <!-- <h2>List of Notes</h2> -->
+            <ul>
+                <!-- <li>
+                    <div class="note-title">Meeting Notes</div>
+                    <i data-lucide="move-right"></i>
+                </li> -->
+            </ul>
+        </section>
+      </div>
+      <div class="right">
+        <div class="topBar">
+            <div class="name">
+                Design Notes
+            </div>
+            <div class="actions">
+                <li data-lucide="moon" id="moon" class="mode-btn"></li>
+                <li data-lucide="sun" id="sun" class="mode-btn"></li>
+            </div>
+        </div>
+        <div class="noteContainer">
+            <p style="text-align:center;font-size:larger;font-weight:bold">Select note to read edit or delete</p>
+        </div>
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
